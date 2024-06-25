@@ -1,0 +1,235 @@
+{% load static %}
+<!doctype html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+        <link rel="shortcut icon" href="{% static 'frontend/assets/images/fav.png' %}" type="image/x-icon">
+        <link href="{% static 'frontend/https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap' %}" rel="stylesheet">
+        <link rel="shortcut icon" href="{% static 'frontend/assets/images/fav.jpg' %}">
+        <link rel="stylesheet" href="{% static 'frontend/assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/assets/css/all.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/ekene.css' %}" />
+    </head>
+
+    <body>
+        <header class="head-container">
+            <div class="info-row container-fluid">
+               <div class="container">
+                     <ul class="row">
+                        <li class="col-md-6 d-none d-md-block col-lg-4"><i class="far fa-map"></i> 23 arumoh street apapa lagos nigeria</li>
+                        <li class="col-md-6 d-none d-md-block col-lg-4"><i class="far fa-envelope"></i> akaliekene42@gmail.com</li>
+                        <li class="col-lg-4 d-none d-lg-block"><i class="far fa-clock"></i> Weekdays: 09.00am to 18.00pm</li>
+                    </ul>
+               </div>
+               
+            </div>
+            <div class="log-row container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 d-none d-md-block call-col">
+                            <p>Call : +2348080524832</p>
+                        </div>
+                        <div class="col-md-4 logo-col">
+                            <img src="{% static 'frontend/assets/images/logo.png' %}" alt="">
+                            <center>
+                                {{ request.user.username }}
+                            </center>
+                            <a class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                 <i class="bi bi-list"></i>
+                             </a>
+                        </div>
+                        <div class="col-md-4 d-none d-md-block socialcol">
+                            <ul>
+                                <li><i class="fab fa-facebook-f"></i></li>
+                                <li><i class="fab fa-twitter"></i></li>
+                                <li><i class="fab fa-linkedin-in"></i></li>
+                                <li><i class="fab fa-instagram"></i></li>
+                                <li><i class="fab fa-pinterest-p"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            
+             <div id="navbarNav" class="nav-row d-none d-md-block container-fluid">
+                <div class="container">
+                    <div class="row nav-col">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'frontend:register' %}">Register</a></li>
+                            {% else %}
+                            <li><a href="{% url 'frontend:custom_login' %}">Login</a></li>
+                        {% endif %}
+                            {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'frontend:confirm_logout' %}">Logout</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'frontend:about' %}">About US</a></li>
+                            <li><a href="{% url 'frontend:services' %}">Services</a></li>
+                            <li><a href="{% url 'frontend:blog' %}">Blog</a></li>
+                            
+                            <li><a href="{% url 'frontend:contact' %}">Contact Us</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+
+        <section id="siteMenu">
+            <div class="row">
+              <nav class="navbar navbar-inverse">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-target="#mainNav" data-toggle="collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNav">
+                  <center>
+                    <ul class="nav navbar-nav">
+        
+                  
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About</a></li>
+                      <li><a href="">Contact</a></li>
+                    
+                    
+                    <!-- <li class="active"><a href="{% url 'home' %}">Home</a></li> -->
+        
+                    
+                     
+                  </ul>
+                  </center>
+                  
+                </div>
+              </nav>
+            </div>
+          </section>
+
+                {% block content %}
+                {% endblock %}
+
+    <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 about">
+                                <h2>About Us</h2>
+                                <p>Phasellus scelerisque ornare nisl sit amet pulvinar. Nunc non scelerisque augue. Proin et sollicitudin velit. </p>
+                                
+                                <div class="foot-address">
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="addet">
+                                        BlueDart
+                                        Marthandam (K.K District)
+                                        Tamil Nadu, IND 
+                                    </div>
+                                </div>
+                                <div class="foot-address">
+                                    <div class="icon">
+                                        <i class="far fa-envelope-open"></i>
+                                    </div>
+                                    <div class="addet">
+                                        info@smarteyeapps.com <br>
+                                        sales@smarteyeapps.com
+                                    </div>
+                                </div>
+                                <div class="foot-address">
+                                    <div class="icon">
+                                       <i class="fas fa-mobile-alt"></i>
+                                   </div>
+                                   <div class="addet">
+                                    +23 323 43434 <br>
+                                    +1 3232 434 55
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 fotblog">
+                            <h2>From latest Blog</h2>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                            <div class="blohjb">
+                                <p>dignissim. Integer tempor facilisis malesuada. Proin ac varius velit, tincidunt condimentum</p>
+                                <span>22-1-2019</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 glink">
+                            <ul>
+                            <li><a href="{% url 'home' %}"><i class="fas fa-angle-double-right"></i>Home</a></li>
+                            {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'frontend:register' %}"><i class="fas fa-angle-double-right"></i>Register</a></li>
+                            <li><a href="{% url 'frontend:confirm_logout' %}"><i class="fas fa-angle-double-right"></i>Logout</a></li>
+                                {% else %}
+                            <li><a href="{% url 'frontend:custom_login' %}"><i class="fas fa-angle-double-right"></i>Login</a></li>
+                            {% endif %}
+
+                                <li><a href="{% url 'frontend:about' %}"><i class="fas fa-angle-double-right"></i>About Us</a></li>
+                                <li><a href="{% url 'frontend:services' %}"><i class="fas fa-angle-double-right"></i>Services</a></li>
+                                <li><a href="{% url 'frontend:blog' %}"><i class="fas fa-angle-double-right"></i>Blog</a></li>
+                        
+                                <li><a href="{% url 'frontend:contact' %}"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
+                                {% if request.user.is_authenticated %}
+                            <li><a href="{% url 'frontend:contact' %}">Contact Us</a></li>
+                            <li><a href="">Appointment History</a></li>
+                            {% endif %}
+                            </ul>
+                        </div>
+                        <div class="col-md-3 tags">
+                            <h2>Easy Tags</h2>
+                            <ul>
+                                <li>Finance</li>
+                                <li>Web Design</li>
+                                <li>Internet Pro</li>
+                                <li>Node Js</li>
+                                <li>Java Swing</li>
+                                <li>Angular Js</li>
+                                <li>Vue Js</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </footer>
+                <div class="copy">
+                    <div class="container">
+                        <a href="akaliekene42@gmail.com">2024 &copy; All Rights Reserved | Designed and Developed by Smarteyeapps</a>
+                        <span>
+                            <a><i class="fab fa-github"></i></a>
+                            <a><i class="fab fa-google-plus-g"></i></a>
+                            <a><i class="fab fa-pinterest-p"></i></a>
+                            <a><i class="fab fa-twitter"></i></a>
+                            <a><i class="fab fa-facebook-f"></i></a>
+                        </span>
+                    </div>
+                </div>
+                    
+                     
+                </body>
+                
+                <script src="{% static 'frontend/assets/js/jquery-3.2.1.min.js' %}"></script>
+                <!-- <script src="{% static 'frontend/assets/js/popper.min.js' %}"></script> -->
+                <script src="{% static 'frontend/assets/js/bootstrap.bundle.min.js' %}"></script>
+                <!-- <script src="{% static 'frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+                <script src="{% static 'frontend/assets/js/script.js' %}"></script>
+                 -->
+                </html>

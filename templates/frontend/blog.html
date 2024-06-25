@@ -1,0 +1,66 @@
+
+
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block content %}
+
+        <!--  ************************* Page Title Starts Here ************************** -->
+<div class="page-nav no-margin row">
+    <div class="container">
+        <div class="row">
+            <h2>Our Blog</h2>
+            <ul>
+                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><i class="fas fa-angle-double-right"></i> Blog</li>
+            </ul>
+        </div>
+    </div>
+</div>
+ 
+<section class="bg-06">
+    <div class="container">
+        <div class="row">
+             <div class="session-title">
+                <h2>Our Blog</h2>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod <br> tempor invidunt ut labore et dolore magna aliquyam.</p>
+            </div>
+        {% for x in post %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <article class="blog-sub">
+                    <a href="{% url 'frontend:detail' x.id %}">
+                    <div class="blog-content">
+                        <img src=" {{x.pst_image.url }}">
+                    </div>
+                    <div class="blog-content-section">
+                        <div class="blo-content-title">
+                            <h4> {{x.pst_title }} </h4>
+                            <p>
+                                {{ x.content|truncatewords:10 }}
+                            </p>
+                        </div>
+                        <div class="blog-admin">
+                            <ol>
+                                <li><i class="far fa-user"></i> {{x.created_by }} </li>
+                                <li><i class="far fa-calendar-alt"></i> {{x.created_at }} </li>
+                            </ol>
+                        </div>
+                    </div>
+                </a>
+                </article>
+            </div>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+   
+   

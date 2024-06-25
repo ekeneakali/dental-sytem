@@ -1,0 +1,86 @@
+
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Services
+{% endblock %}
+
+{% block content %}
+        
+        <!--  ************************* Page Title Starts Here ************************** -->
+<div class="page-nav no-margin row">
+    <div class="container">
+        <div class="row">
+            <h2>Services</h2>
+            <ul>
+                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><i class="fas fa-angle-double-right"></i> Services</li>
+            </ul>
+        </div>
+    </div>
+</div>
+   
+<!-- ################# Services Starts Here#######################--->
+
+<section class="services container-fluid">
+   <div class="row">
+       <div class="col-xl-12">
+           <div class="servic-row row">
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="assets/images/icon/001.png" alt="">
+                    <h4>Dental Implants </h4>
+                    <p>The implant fixture is first placed, so that it is  en a dental prosthetic is added.</p>
+                </div>
+               
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="assets/images/icon/002.png" alt="">
+                    <h4>Maxillofacial </h4>
+                    <p>The implant fixture is first placed, so that it is  , then a dental prosthetic is added.</p>
+                </div>
+                
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="assets/images/icon/003.png" alt="">
+                    <h4>Endodontics </h4>
+                    <p>The implant fixture is first placed, so that it is  , then a dental prosthetic is added.</p>
+                </div>
+                
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="assets/images/icon/004.png" alt="">
+                    <h4>Intervention </h4>
+                    <p>The implant fixture is first placed, so that it is  , then a dental prosthetic is added.</p>
+                </div>
+                
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="assets/images/icon/005.png" alt="">
+                    <h4>Braces Tratment</h4>
+                    <p>The implant fixture is first placed, so that it is  , then a dental prosthetic is added.</p>
+                </div>
+               
+            </div>
+            <div class="servic-col col-md-4">
+                <div class="servcover">
+                    <img src="{% static 'frontend/assets/images/icon/006.png' %}" alt="">
+                    <h4>Teeth Whitening</h4>
+                    <p>The implant fixture is first placed, so that it is , then a dental prosthetic is added.</p>
+                </div>
+               
+            </div>
+        </div>
+       </div>
+       
+   </div>
+</section> 
+
+{% endblock %}
+   

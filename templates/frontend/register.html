@@ -1,0 +1,74 @@
+
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+        
+        <!--  ************************* Page Title Starts Here ************************** -->
+<div class="page-nav no-margin row">
+    <div class="container">
+        <div class="row">
+            <h2>Register</h2>
+            <ul>
+                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><i class="fas fa-angle-double-right"></i> Register</li>
+            </ul>
+        </div>
+    </div>
+</div>
+   
+<!-- ################# Register Starts Here#######################--->
+
+{% if messages %}
+  {% for mes in messages %}
+    <div class="alert alert-success">{{mes}}</div>
+    {% endfor %}
+  {% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 main-col offset-md-3">
+            <div class="mb-4">
+               
+                <form method="post" action="#" id="CustomerLoginForm" accept-charset="UTF-8" class="contact-form">
+                  {% csrf_token%}
+                                
+                                 
+                  {% for field in form %}  
+                  
+                    {{ field.label_tag }}  
+                    {{ field }}  
+                    {% if field.help_text %}  
+                      <small style="display: none ">{{ field.help_text }}</small>  
+                    {% endif %}  
+                    {% for error in field.errors %}  
+                      <div style="color: red;"> {{ error }} </div>  
+                    {% endfor %}  
+                   
+                  {% endfor %}
+                  
+                <div class="row">
+                  <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12">
+                      <input type="submit" class="btn mb-3 btn-primary" value="Sign up">
+                  </div>
+               </div>
+               <p>
+                   <small>
+                    Already have an account <a href="{% url 'frontend:custom_login' %}" class="btn btn-info">Login</a>
+                   </small>
+               </p>	
+                
+             </form>
+            </div>
+           </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}
+   

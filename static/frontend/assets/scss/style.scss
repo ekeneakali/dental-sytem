@@ -1,0 +1,424 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+
+.head-container{
+    background-color: #FFF;
+    .info-row{
+        background-color: rgba(204, 204, 204, 0.22);
+        ul{
+            li{
+                padding: 20px;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .log-row{
+        padding: 25px;
+        @media screen and (max-width: 767px) {
+            padding: 12px;
+        }
+        .call-col{
+            margin: auto;
+            p{
+                font-weight: 600;
+                color: #32b6a1;
+            }
+        }
+        .logo-col{
+            margin: auto;
+            text-align: center;
+            img{
+                max-width: 250px;
+            }
+            @media screen and (max-width: 767px) {
+                text-align: left;
+            }
+        }
+        .socialcol{
+            margin: auto;
+            ul{
+                float: right;
+                li{
+                    float: left;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    .nav-row{
+        .nav-col{
+            background-color:#32b6a1;
+            ul{
+                li{
+                    float: left;
+                    padding: 20px 30px;
+                    border-right: 1px solid rgba(223, 240, 242, 0.6);
+                    @media screen and (max-width: 767px) {
+                        float: none;
+                        padding: 15px;
+                    }
+                    a{
+                        color: #FFF;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+     .navbar-toggler{
+        float: right;
+          margin-top: 10px;
+         padding-right: 0px;
+        i{
+            font-size: 2rem;
+           
+           
+        }
+        
+    }
+}
+
+
+
+/* ===================================== Slider CSS ================================== */
+
+.slider{
+	
+	.carousel-caption{
+		text-align: right;
+		bottom: 100px;
+		margin-left: -50px;
+		h5{
+			font-size: 5.5rem;
+			color: $color-primary;
+			max-width: 650px;
+			font-weight: 700;
+			float: right;
+			text-shadow: 3px 3px #fff;
+			@media screen and (max-width: 1150px) {
+				font-size: 3.5rem;
+			}
+		}
+		p{
+			font-size:1.5rem;
+			color: $color-primary;
+			max-width: 650px;
+			float: right;
+			font-weight: 600;
+			text-shadow: 3px 3px #fff;
+		}
+		span{
+			color: #444;
+		}
+	}
+	
+}
+
+
+
+/* ===================================== About Us CSS ================================== */
+
+.about-us{
+	background-color: #FFF;
+	@include big-padding();
+	
+	p{
+		margin-top: 10px;
+		line-height: 26px;
+	}
+	@media screen and (max-width: 767px) {
+		img{
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.about-count{
+	.countcol{
+		text-align: center;
+		padding: 20px;
+		i{
+			font-size: 2.5rem;
+			color: $color-primary;
+		}
+		strong{
+
+		}
+	}
+}
+
+/* ===================================== Services CSS ================================== */
+
+.servic-row{
+	padding: 15px;
+	padding-left: 15%;
+	@media screen and (max-width: 1199px) {
+		padding-left: 0px;
+	}
+	.servcover{
+		text-align: center;
+		padding: 20px;
+		img{
+			margin-bottom: 15px;
+		}
+		h4{
+			margin-bottom: 15px;
+		}
+	}
+	.vhfinh{
+		background-image: url('../../assets/images/services.jpg');
+	}
+}
+
+/* ===================================== Services CSS ================================== */
+
+.apointment{
+    background-color: rgba(139, 209, 181, 0.25);
+   
+    .form-cover{
+        background-color: #FFF;
+         margin: auto;
+        padding: 30px;
+        margin-top: 100px;
+        h3{
+            margin-bottom: 20px;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+/* ===================================== Our Team CSS ================================== */
+
+.team-member {
+  background-color: #f9fbff;
+}
+.team-row .team-col .teamdiv {
+  margin-bottom: 30px;
+}
+.team-row .team-col .teamdiv .image-part {
+  text-align: center;
+}
+.team-row .team-col .teamdiv .image-part img {
+  width: 90px;
+  border-radius: 50px;
+  margin-bottom: -40px;
+}
+.team-row .team-col .teamdiv .detail-part {
+  background-color: #FFF;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 60px;
+  text-align: center;
+  box-shadow: 0 2px 3px 0 rgba(218, 218, 253, 0.35), 0 0px 3px 0 rgba(206, 206, 238, 0.35);
+}
+.team-row .team-col .teamdiv .detail-part h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+.team-row .team-col .teamdiv .detail-part span {
+  color: #1965fd;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.team-row .team-col .teamdiv .detail-part p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+.team-row .team-col .teamdiv .detail-part .social-links a i {
+  width: 30px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.session-title {
+  padding: 30px;
+  margin: 0px;
+}
+.session-title h2 {
+  width: 100%;
+  text-align: center;
+}
+.session-title p {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* ===================================== Our Blog CSS ================================== */
+
+
+.bg-06{
+    padding:3.125rem 0;
+    position: relative;
+    background: #f3f8fc;
+    overflow: hidden;
+
+    
+
+    .blog-sub{
+        position: relative;
+        margin:20px 0px;
+        padding:20px 0px;
+
+        .blog-content{
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .blog-content-section{
+            padding: 20px 25px;
+            background: #fff;
+            border: solid 1px #eee8e8;
+            border-top: 0;
+            display: block;
+            width: 100%;
+
+            .blo-content-title{
+                 h4{
+                    font-size: 1rem;
+                    font-weight: 600;
+                    padding: 3px 0px;
+                }
+                p{
+                    padding: 3px 0px;
+                    line-height: 27px;
+                    font-size: .9rem;
+                }
+            }
+
+            .blog-admin{
+                margin: 5px 0px;
+
+                ol{
+                    padding-left: 0px;
+                    li{
+                        display: inline-block;
+                        font-size: 15px;
+                        margin: 0 5px 0 0;
+                        margin-right: 10px;
+                        i{
+                            padding: 0 5px 0 0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+//Footter Style
+
+.footer-ablove {
+  padding: 30px;
+  background-color: #05939c;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.footer-ablove .btn {
+  float: right;
+  background-color: #fff;
+  font-family: "mouse-500", Arial, Helvetica, sans-serif;
+}
+
+footer {
+  padding: 80px 50px;
+  background-color: #32b6a1;
+  color: #fff;
+}
+@media screen and (max-width: 940px) {
+  footer {
+    padding: 50px 10px;
+  }
+}
+footer h2 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+footer .about p {
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+footer .about .foot-address {
+  display: flex;
+}
+footer .about .foot-address .icon {
+  padding: 20px 10px;
+}
+footer .about .foot-address .addet {
+  font-size: 0.9rem;
+  margin: auto 0px;
+}
+footer .fotblog .blohjb {
+  margin-bottom: 10px;
+}
+footer .fotblog .blohjb p {
+  font-size: 0.9rem;
+}
+footer .fotblog .blohjb span {
+  font-size: 0.9rem;
+}
+footer .glink ul li {
+  padding: 10px;
+}
+footer .glink ul li i {
+  margin-right: 10px;
+}
+footer .glink ul li a {
+  color: #fff;
+}
+footer .tags ul li {
+  float: left;
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+}
+
+.copy {
+  padding: 20px;
+  background-color: #11a78f;
+  color: #fff;
+}
+.copy a {
+  color: #fff;
+}
+.copy span {
+  float: right;
+}
+.copy span i {
+  margin-right: 20px;
+}
+
+.cop-ck {
+  padding: 20px;
+  background-color: #ffffffbd;
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}

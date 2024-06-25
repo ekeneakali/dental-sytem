@@ -1,0 +1,107 @@
+
+
+{% extends 'frontend/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block content %}
+
+        <!--  ************************* Page Title Starts Here ************************** -->
+<div class="page-nav no-margin row">
+    <div class="container">
+        <div class="row">
+            <h2>Blog Article</h2>
+            <ul>
+                <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><i class="fas fa-angle-double-right"></i> Blog Details</li>
+            </ul>
+        </div>
+    </div>
+</div>
+ 
+
+            <center>
+                <div style="margin-top: 5px;
+                margin-bottom: 20px;
+                background-color: #ffffffbd"
+                >
+                <p>
+                    <h4>Title: {{race.pst_title|upper}}</h4>
+                </p>
+
+                    <img src="{{race.pst_image.url}}" alt="img" width="400px" height="400px">
+                    <p>
+                     <span class="fa fa-eye"></span> {{race.num_site}} view{{ race.num_site|pluralize}} since {{race.created_at|timesince}} ago. 
+                    </p>
+                    <p>
+                        {{ race.content }}
+                    </p>
+
+                </div>
+
+                
+                <form action="" method="post">
+                    {% csrf_token %}
+                <div class="row contact-rooo no-margin">
+                    <div class="container">
+                        <div class="row">
+
+                            
+            <center>
+                {% if comment %}
+                            {% for x in comment %}
+
+                                <div style="text-align: left; 
+                                background-color: #ddd; 
+                                padding:10px; 
+                                margin-bottom:10px;
+                                border-radius: 10px;">
+                                <p>
+                                    Name: {{ x.name }}
+
+                                </p>
+                                <p>
+                                    Comment: {{ x.comment }}
+
+                                </p>
+                                Create on: {{ x.created_at}}
+                                </div>
+                                {% endfor %}
+                                {% else %}
+
+                                    <center>
+                                        <h3>Be the first to comment here</h3>
+                                    </center>
+                                {% endif %}
+            
+            </center>
+                            <div style="padding:20px" class="col-sm-7">
+                                <h2 ></h2> <br>
+                                <div class="row cont-row">
+                                    <div  class="col-sm-3"><label>Enter Name </label><span>:</span></div>
+                                    <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+            
+                        
+                                <div  class="row cont-row">
+                                    <div  class="col-sm-3"><label>Enter Message</label><span>:</span></div>
+                                    <div class="col-sm-8">
+                                        <textarea rows="5" name="comment" placeholder="Enter Your Message" class="form-control input-sm"></textarea>
+                                    </div>
+                                </div>
+                                <div style="margin-top:10px;" class="row">
+                                    <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+                                    <div class="col-sm-8">
+                                        <button class="btn btn-success btn-sm">Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </form>
+            </center>
+{% endblock %}
+   
+   
