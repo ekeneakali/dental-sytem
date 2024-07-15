@@ -249,7 +249,7 @@ def password_reset_request(request):
                 else:
                     messages.error(request, "Problem sending reset password email, <b>SERVER PROBLEM</b>")
 
-            return redirect('home')
+            return redirect('frontend:password_reset')
 
         for key, error in list(form.errors.items()):
             if key == 'captcha' and error[0] == 'This field is required.':

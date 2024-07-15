@@ -67,8 +67,9 @@
                         <ul>
                             <li><a href="{% url 'home' %}">Home</a></li>
                             {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'frontend:register' %}">Register</a></li>
                             {% else %}
+                            <li><a href="{% url 'frontend:register' %}">Register</a></li>
+                            
                             <li><a href="{% url 'frontend:custom_login' %}">Login</a></li>
                         {% endif %}
                             {% if request.user.is_authenticated %}
@@ -189,9 +190,9 @@
                                 <li><a href="{% url 'frontend:blog' %}"><i class="fas fa-angle-double-right"></i>Blog</a></li>
                         
                                 <li><a href="{% url 'frontend:contact' %}"><i class="fas fa-angle-double-right"></i>Contact Us</a></li>
-                                {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'frontend:contact' %}">Contact Us</a></li>
-                            <li><a href="">Appointment History</a></li>
+                            {% if request.user.is_authenticated %}
+                            
+                            <li><a href="{% url 'frontend:password_change' %}"><i class="fas fa-angle-double-right"></i>Password Change</a></li>
                             {% endif %}
                             </ul>
                         </div>

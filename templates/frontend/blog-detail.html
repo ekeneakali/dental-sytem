@@ -79,11 +79,12 @@ Blog
                                 {% endif %}
             
             </center>
+            {% if request.user.is_authenticated %}
                             <div style="padding:20px" class="col-sm-7">
                                 <h2 ></h2> <br>
                                 <div class="row cont-row">
-                                    <div  class="col-sm-3"><label>Enter Name </label><span>:</span></div>
-                                    <div class="col-sm-8"><input type="text" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
+                                    <!-- <div  class="col-sm-3"><label>Enter Name </label><span>:</span></div> -->
+                                    <div class="col-sm-8"><input type="hidden" value="{{ request.user.username}}" placeholder="Enter Name" name="name" class="form-control input-sm"  ></div>
             
                         
                                 <div  class="row cont-row">
@@ -101,6 +102,11 @@ Blog
                             </div>
             
                         </form>
+                        {% else %}
+                        <center>
+                            <h3>Please <a href="{% url 'frontend:custom_login' %}" class="btn btn-success">login</a> to comment</h3>
+                        </center>
+                        {% endif %}
             </center>
 {% endblock %}
    
